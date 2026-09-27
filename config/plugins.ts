@@ -29,6 +29,11 @@ const config = ({
   'users-permissions': {
     config: {
       jwtManagement: 'legacy-support',
+
+      jwt: {
+        expiresIn: '30d',
+      },
+
       jwtSecret: env('JWT_SECRET'),
     },
   },
