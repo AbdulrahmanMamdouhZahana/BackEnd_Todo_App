@@ -30,9 +30,6 @@ const config = ({
     config: {
       jwtManagement: 'legacy-support',
       jwtSecret: env('JWT_SECRET'),
-      jwt: {
-        expiresIn: '30d',
-      },
     },
   },
 
