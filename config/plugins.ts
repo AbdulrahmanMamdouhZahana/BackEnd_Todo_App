@@ -23,12 +23,19 @@ const deniedTypes = [
   'application/x-mach-binary',
 ];
 
-const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Plugin => ({
-'users-permissions': {
-  config: {
-    jwtManagement: 'legacy-support',
+const config = ({
+  env,
+}: Core.Config.Shared.ConfigParams): Core.Config.Plugin => ({
+  'users-permissions': {
+    config: {
+      jwtManagement: 'legacy-support',
+      jwtSecret: env('JWT_SECRET'),
+      jwt: {
+        expiresIn: '30d',
+      },
+    },
   },
-},
+
   upload: {
     config: {
       security: {
